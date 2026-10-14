@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+
+# Saída de build
+dist/
+
+# Segredos — NUNCA comitar
+.env
+.env.*
+!.env.example
+
+# Logs e sistema
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,50 @@
+{
+  "name": "gemini-grounding-mcp",
+  "version": "1.0.0",
+  "description": "Servidor MCP que dá ao Claude (e a qualquer cliente MCP) busca web com grounding do Google Gemini, retornando respostas com fontes citadas e saída enxuta.",
+  "type": "module",
+  "bin": {
+    "gemini-grounding-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "node --env-file=.env dist/index.js",
+    "prepare": "tsc"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "gemini",
+    "claude",
+    "grounding",
+    "google-search",
+    "ai"
+  ],
+  "license": "MIT",
+  "author": "@pro.hudsontravassos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wall-e-assessor/gemini-grounding-mcp.git"
+  },
+  "homepage": "https://github.com/wall-e-assessor/gemini-grounding-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/wall-e-assessor/gemini-grounding-mcp/issues"
+  },
+  "dependencies": {
+    "@google/genai": "^2.8.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
