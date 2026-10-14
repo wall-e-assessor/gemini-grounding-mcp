@@ -55,17 +55,23 @@ O servidor lê a chave da variável de ambiente **`GEMINI_API_KEY`**.
 
 Registre o servidor no escopo de usuário (vale para todas as sessões). Troque o caminho e a chave pelos seus:
 
+> As opções (`--scope`, `--env`, `--transport`) vêm **antes** do nome do servidor. Se o nome vier logo depois de `--env`, o CLI o lê como mais uma variável e recusa o comando; por isso o `--transport stdio` fica entre os dois ([documentação oficial](https://code.claude.com/docs/en/mcp)).
+
 ```bash
-claude mcp add gemini-grounding --scope user \
+claude mcp add --scope user \
   --env GEMINI_API_KEY=SUA_CHAVE_AQUI \
+  --transport stdio \
+  gemini-grounding \
   -- node /caminho/absoluto/para/gemini-grounding-mcp/dist/index.js
 ```
 
-No **Windows**, use o caminho completo do `node` e barras invertidas escapadas, por exemplo:
+No **Windows** (Prompt de Comando), use o caminho completo do `node`, com cada caminho entre aspas. No PowerShell, troque o `^` do fim das linhas por `` ` ``. Exemplo:
 
 ```bash
-claude mcp add gemini-grounding --scope user ^
+claude mcp add --scope user ^
   --env GEMINI_API_KEY=SUA_CHAVE_AQUI ^
+  --transport stdio ^
+  gemini-grounding ^
   -- "C:\Program Files\nodejs\node.exe" "C:\caminho\gemini-grounding-mcp\dist\index.js"
 ```
 
